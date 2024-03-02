@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - pythonapp:/usr/share/flaskAPI/data
+    environment:
+      - FLASK_APP=app.py
+    command: ["python", "app.py"]
+volumes:
+  pythonapp:
